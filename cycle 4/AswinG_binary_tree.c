@@ -30,8 +30,8 @@ struct node *Postorder(struct node *root)
 {
     if (root == NULL)
         return root;
-    Preorder(root->left);
-    Preorder(root->right);
+    Postorder(root->left);
+    Postorder(root->right);
     printf("%d ", root->key);
 }
 
@@ -40,9 +40,9 @@ struct node *Inorder(struct node *root)
 {
     if (root == NULL)
         return root;
-    Preorder(root->left);
+    Inorder(root->left);
     printf("%d ", root->key);
-    Preorder(root->right);
+    Inorder(root->right);
 }
 
 struct node *Insert(struct node *node, int key)
